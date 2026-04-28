@@ -1,4 +1,101 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Top-Up Game</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.box {
+  background: #1e293b;
+  padding: 20px;
+  width: 300px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  width: 95%;
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+#result {
+  margin-top: 15px;
+  color: yellow;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+  <h2>🔥 Top-Up Game</h2>
+
+  <input type="text" id="playerId" placeholder="Enter Player ID">
+
+  <select id="pack">
+    <option value="5">$5 - 100 Diamonds</option>
+    <option value="10">$10 - 220 Diamonds</option>
+    <option value="20">$20 - 500 Diamonds</option>
+  </select>
+
+  <select id="payment">
+    <option>ABA</option>
+    <option>Wing</option>
+    <option>TrueMoney</option>
+  </select>
+
+  <button onclick="buy()">Top Up</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function buy() {
+  let id = document.getElementById("playerId").value;
+  let pack = document.getElementById("pack").value;
+  let pay = document.getElementById("payment").value;
+
+  if(id === "") {
+    document.getElementById("result").innerText = "⚠️ សូមបញ្ចូល Player ID";
+    return;
+  }
+
+  document.getElementById("result").innerText =
+    "✅ Top-up $" + pack +
+    " for ID: " + id +
+    " via " + pay +
+    " (Demo Only)";
+}
+</script>
+
+</body>
+</html><div align="center">
 
 <img src="https://img.shields.io/badge/-RITHTOPUP-f97316?style=for-the-badge&labelColor=0f172a&logoColor=white" alt="RITHTOPUP" />
 
